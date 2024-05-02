@@ -1,0 +1,26 @@
+.card_wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.card_wrapper span{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.card_wrapper img{
+    object-fit: contain;
+}
+
+.card_wrapper p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}

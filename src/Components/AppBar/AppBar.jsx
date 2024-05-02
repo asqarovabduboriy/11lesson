@@ -165,11 +165,13 @@ export default function PrimarySearchAppBar() {
 
 
   const serchitem = data?.data?.products?.map((el) => (
-
-    <Link to={`/products/${el.id}`} key={el.id} style={{ display: 'flex', alignItems: 'center' }}>
+    <Link onClick={() => { setvaleu('');  }
+    } to={`/products/${el.id}`}
+      key={el.id}
+      style={{ display: 'flex', alignItems: 'center' }}>
       <img src={el.images[0]} alt={el.title} width={50} height={50} />
       <span style={{ color: 'black' }}>{el.title}</span>
-    </Link>
+    </Link >
 
   ))
 
@@ -211,12 +213,10 @@ export default function PrimarySearchAppBar() {
               </SearchIconWrapper>
               <StyledInputBase
                 value={valeu}
-                onChange={e => setvaleu(e.target.value)}
+                onChange={e => {setvaleu(e.target.value)}}
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
               />
-
-
             </Search>
 
             {

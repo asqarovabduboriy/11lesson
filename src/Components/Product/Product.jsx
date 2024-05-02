@@ -40,7 +40,9 @@ const Product = () => {
                     </Swiper>
                 </div>
                 <Card data={data?.data?.products} />
-                <Button onClick={() => setcount(p => p + 1)} variant="contained" color='primary'>see more </Button>
+              <div className='Btn_wrapper'>
+              <Button onClick={() => setcount(p => p + 1)} variant="contained" color='primary'>see more </Button>
+              </div>
             </Container>
 
         </>

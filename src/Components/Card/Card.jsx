@@ -14,6 +14,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import './Card.css'
 import { Container } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Loading from '../Loading/Loading'
 
 
 
@@ -47,12 +49,13 @@ export default function RecipeReviewCard(props) {
                 title={el.title}
                 subheader={el.rating}
             />
-            <CardMedia
-                component="img"
-                height="194"
-                image={el.images[0]}
-                alt="Paella dish"
-            />
+            <Link to={`/products/${el.id}`}>    
+                <CardMedia
+                    component="img"
+                    height="194"
+                    image={el.images[0]}
+                    alt="Paella dish"
+                /></Link>
             <CardContent>
                 <Typography variant="body2" color="text.secondary" title={el.description}>
                     {el.description}
@@ -69,6 +72,12 @@ export default function RecipeReviewCard(props) {
         </Card>
 
     ))
+   
+    if (!card) {
+        return <Container>
+            <Loading/>
+        </Container>
+    }
 
 
     return (
@@ -76,9 +85,9 @@ export default function RecipeReviewCard(props) {
             <Container>
                 <div className='card_wrapper'>
                     {
-                        card
+                      card   
                     }
-                    
+
                 </div>
             </Container>
         </>
